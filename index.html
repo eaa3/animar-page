@@ -1,0 +1,209 @@
+
+<html>
+	<head>
+
+		<title>AnimAR</title>
+
+		
+		<link href="css/bootstrap.min.css" rel="stylesheet" media="screen"/>
+		<meta charset='utf-8'/> 
+
+	<style type="text/css">
+
+		body {
+			padding: 70px 0 0;
+			background: #EEEEEE url('bg.png')  no-repeat center center fixed;
+			  -webkit-background-size: cover;
+			  -moz-background-size: cover;
+			  -o-background-size: cover;
+			  background-size: cover;
+			  font-size: 1em;
+		}
+
+		a, a:link, a:visited {
+			color: #555;
+			text-shadow: 0 1px 1px #fff;
+		}
+
+		#splash {
+			text-align: center;
+		}
+
+		.link-imb {
+			margin: 25px auto 0;
+			display: block;
+			width: 180px;
+		}
+
+		.link-imb img {
+			width: 180px;
+		}
+
+		footer {
+			width: 100%;
+			padding: 15px;
+			box-sizing: border-box;
+			background: rgba(255,255,255, 0.8);
+			position: fixed;
+			bottom: 0;
+			left: 0;
+		}
+
+		#link-hello {
+			float: right;
+			color: #777;
+		}
+
+		.menu-d {
+			float: left;
+			list-style: none;
+			margin: 0;
+		}
+
+		.menu-d li {
+			display: inline-block;
+			margin: 0 10px 0 0;
+		}
+
+		.papergrid {
+			font-weight: 700;
+			font-size: 1.2em;
+		}
+
+		#logo {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			margin: -280px auto 0 -250px;
+		}
+	</style>
+
+	</head>
+	<body>
+
+		<div id="logo">
+			<img src="animarlogo.png">
+			<a href="#" class="link-imb"><img src="gplay.png"></a>
+		</div>
+
+		<footer>
+			<a id="link-hello" href="mailto:hello@animar.com">hello@animar.com</a>
+			<ul class="menu-d">
+				<li><a href="#papergridModal" data-toggle="modal" class="papergrid">Download papergrid</a></li>
+				<li><a href="#terms" data-toggle="modal">Terms of Service</a></li>
+				<li><a href="#privacy" data-toggle="modal">Privacy Policy</a></li>
+				<li><a href="#modalTest" data-toggle="modal">ModalTEst </a></li>
+			</ul>
+		</footer>
+		
+
+	<div id="modalTest" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="windowTitleLabel" aria-hidden="true">
+				<div class="modal-header">
+					<a href="#modalTest" class="close" data-dismiss="modal">&times;</a>
+					<h3>Please enter a new title for this window.</h3>
+					</div>
+				<div class="modal-body">
+					<div class="divDialogElements">
+						<input class="xlarge" id="xlInput" name="xlInput" type="text" />
+						</div>
+					</div>
+				<div class="modal-footer">
+					<a href="#" class="btn" onclick="closeDialog ();">Cancel</a>
+					<a href="#" class="btn btn-primary" onclick="okClicked ();">OK</a>
+					</div>
+	</div>
+
+
+<div id="papergridModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="papergridModalLabel" aria-hidden="true">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <h3 id="papergridModalLabel">Paper Grids</h3>
+  </div>
+  <div class="modal-body">
+    <table class="table">
+    	<thead>
+                <tr>
+                  <th>Device</th>
+                  <th>PDF File</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Paper Grid 1</td>
+                  <td><a href="animar_paper_grid1.pdf">Download</a></td>
+                </tr>
+                <tr>
+                  <td>Paper Grid 2</td>
+                  <td><a href="animar_paper_grid2.pdf">Download</a></td>
+                </tr>
+              </tbody>
+            </table>
+  </div>
+</div>
+
+
+<div id="terms" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="termsLabel" aria-hidden="true">
+  
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <h3 id="termsLabel">Terms of Service</h3>
+  </div>
+
+  <div class="modal-body">
+  	<h3>C. Cancellation and Termination</h3>
+
+  	<p> lol ol </p>
+
+</div>
+
+  <div class="modal-footer">
+    <a href="/terms" class="btn">Open on a external page</a>
+    <a href="/terms/terms.pdf" class="btn">Download as PDF</a>
+  </div>
+</div>
+
+
+<div id="privacy" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="privacyLabel" aria-hidden="true">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <h3 id="privacyLabel">Privacy Policy</h3>
+  </div>
+  <div class="modal-body">
+
+  	<h3>C. Cancellation and Termination</h3>
+  	<p> lol ol </p>
+
+  </div>
+  
+  <div class="modal-footer">
+    <a href="/privacy" class="btn">Open on a external page</a>
+  </div>
+</div>
+
+
+
+<!--<link rel="shortcut icon" href="icon.png"/>-->
+<!-- <script type="text/javascript" src="js/jquery.js"></script> -->
+<script src="js/jquery.js"></script>
+<script src="js/bootstrap.js"></script>
+<!--<script src="http://static.scripting.com/github/bootstrap2/js/bootstrap-modal.js"/></script>-->
+
+
+<script>
+			$(document).ready(function() {
+				$('#modalTest').bind('show', function () {
+					document.getElementById ("xlInput").value = document.title;
+					});
+				});
+			function closeDialog () {
+				$('#modalTest').modal('hide'); 
+				};
+			function okClicked () {
+				document.title = document.getElementById ("xlInput").value;
+				closeDialog ();
+				};
+</script>
+
+
+</body>
+</html>
