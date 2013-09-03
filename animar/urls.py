@@ -7,7 +7,7 @@ from django.conf import settings
 
 urlpatterns = patterns('',
     # Examples:
-    url(r'^home/',include('home.urls')),
+    url(r'^',include('home.urls')),
     # url(r'^$', 'animar.views.home', name='home'),
     # url(r'^animar/', include('animar.foo.urls')),
 
