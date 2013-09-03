@@ -1,0 +1,4 @@
+animar/static_files/*
+animar.db
+*.pyc
+*.pyo

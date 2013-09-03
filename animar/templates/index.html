@@ -1,18 +1,22 @@
 
+<!DOCTYPE html>
 <html>
 	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    	<meta charset="utf-8">
 
 		<title>AnimAR</title>
 
 		
-		<link href="css/bootstrap.min.css" rel="stylesheet" media="screen"/>
+		<link href="{{STATIC_URL}}css/bootstrap.css" rel="stylesheet">
+		<link href="{{STATIC_URL}}css/bootstrap-responsive.css" rel="stylesheet">
 		<meta charset='utf-8'/> 
 
 	<style type="text/css">
 
 		body {
 			padding: 70px 0 0;
-			background: #EEEEEE url('bg.png')  no-repeat center center fixed;
+			background: #EEEEEE url('{{STATIC_URL}}img/bg.png')  no-repeat center center fixed;
 			  -webkit-background-size: cover;
 			  -moz-background-size: cover;
 			  -o-background-size: cover;
@@ -37,10 +41,14 @@
 
 		.link-imb img {
 			width: 180px;
+
+			border-style: solid;
+			border-width: 3px;
+			border-color: black;
 		}
 
 		footer {
-			width: 100%;
+			width: 98%;
 			padding: 15px;
 			box-sizing: border-box;
 			background: rgba(255,255,255, 0.8);
@@ -76,42 +84,106 @@
 			left: 50%;
 			margin: -280px auto 0 -250px;
 		}
+		#logo tr{
+			position: absolute;
+			top: 100%;
+			left: 10%
+		}
+
+		#appdesc {
+			position: absolute;
+			top: 100%;
+			left: 10%;
+			border-color: black;
+			border-style: solid;
+			border-width: 3px;
+
+		}
+
+		#appdesc p {
+			position: relative;
+			text-align: left;
+			padding-left: 5%;
+
+		}
+
+		#appdesc img {
+
+			position: absolute;
+			top: 0%;
+			left: 150%;
+
+			border-color: black;
+			border-style: solid;
+			border-width: 3px;
+
+		}
+
+
+
+		#appvideo {
+			position: absolute;
+			top: 140%;
+			left: 50%;
+			border-color: black;
+			border-style: solid;
+			border-width: 5px;
+			padding: 15px;
+			box-sizing: border-box;
+
+		}
+
+		#appvideo h3 {
+			text-align: center;
+
+		}
+
+
 	</style>
 
 	</head>
 	<body>
 
 		<div id="logo">
-			<img src="animarlogo.png">
-			<a href="#" class="link-imb"><img src="gplay.png"></a>
+			<img src="{{STATIC_URL}}img/animarlogo.png">
+			<table>
+				<tr>
+					<td><a href="/" class="link-imb"><img src="{{STATIC_URL}}img/download.jpg"></a></td>
+					<td><a href="/" class="link-imb"><img src="{{STATIC_URL}}img/gplay.png"></a></td>
+				</tr>
+			</table>
 		</div>
 
+		<div id="appdesc">
+		<h2> What's AnimAR? </h2>
+		<p> bla bla bla bla bla bla </p>
+		<p> bla bla bla bla bla bla </p>
+		<p> bla bla bla bla bla bla </p>
+		<p> bla bla bla bla bla bla </p>
+		<p> bla bla bla bla bla bla </p>
+		<p> bla bla bla bla bla bla </p>
+		<p> bla bla bla bla bla bla </p>
+		<img src="{{STATIC_URL}}img/example.jpg"/>
+		
+
+		
+		</div>
+
+
+		<div id="appvideo">
+		<h3>AnimAR Video</h3>
+			<iframe width="420" height="315" src="//www.youtube.com/embed/4bcX_Txlnt4?rel=0" frameborder="0" allowfullscreen></iframe>
+		</div>
+		<!--
 		<footer>
 			<a id="link-hello" href="mailto:hello@animar.com">hello@animar.com</a>
 			<ul class="menu-d">
 				<li><a href="#papergridModal" data-toggle="modal" class="papergrid">Download papergrid</a></li>
 				<li><a href="#terms" data-toggle="modal">Terms of Service</a></li>
 				<li><a href="#privacy" data-toggle="modal">Privacy Policy</a></li>
-				<li><a href="#modalTest" data-toggle="modal">ModalTEst </a></li>
 			</ul>
-		</footer>
+		</footer>-->
 		
-
-	<div id="modalTest" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="windowTitleLabel" aria-hidden="true">
-				<div class="modal-header">
-					<a href="#modalTest" class="close" data-dismiss="modal">&times;</a>
-					<h3>Please enter a new title for this window.</h3>
-					</div>
-				<div class="modal-body">
-					<div class="divDialogElements">
-						<input class="xlarge" id="xlInput" name="xlInput" type="text" />
-						</div>
-					</div>
-				<div class="modal-footer">
-					<a href="#" class="btn" onclick="closeDialog ();">Cancel</a>
-					<a href="#" class="btn btn-primary" onclick="okClicked ();">OK</a>
-					</div>
-	</div>
 
 
 <div id="papergridModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="papergridModalLabel" aria-hidden="true">
@@ -126,9 +198,9 @@
                   <th>Device</th>
                   <th>PDF File</th>
                 </tr>
-              </thead>
-              <tbody>
-                <tr>
+        </thead>
+        <tbody>
+            	<tr>
                   <td>Paper Grid 1</td>
                   <td><a href="animar_paper_grid1.pdf">Download</a></td>
                 </tr>
@@ -136,8 +208,8 @@
                   <td>Paper Grid 2</td>
                   <td><a href="animar_paper_grid2.pdf">Download</a></td>
                 </tr>
-              </tbody>
-            </table>
+        </tbody>
+    </table>
   </div>
 </div>
 
@@ -183,26 +255,9 @@
 
 
 <!--<link rel="shortcut icon" href="icon.png"/>-->
-<!-- <script type="text/javascript" src="js/jquery.js"></script> -->
-<script src="js/jquery.js"></script>
-<script src="js/bootstrap.js"></script>
-<!--<script src="http://static.scripting.com/github/bootstrap2/js/bootstrap-modal.js"/></script>-->
+<script src="{{STATIC_URL}}js/jquery-2.0.3.min.js"></script>
+<script src="{{STATIC_URL}}js/bootstrap.js"></script>
 
-
-<script>
-			$(document).ready(function() {
-				$('#modalTest').bind('show', function () {
-					document.getElementById ("xlInput").value = document.title;
-					});
-				});
-			function closeDialog () {
-				$('#modalTest').modal('hide'); 
-				};
-			function okClicked () {
-				document.title = document.getElementById ("xlInput").value;
-				closeDialog ();
-				};
-</script>
 
 
 </body>

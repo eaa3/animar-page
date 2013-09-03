@@ -1,0 +1,1 @@
+web: gunicorn animar.wsgi
